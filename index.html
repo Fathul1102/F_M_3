@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <meta name="theme-color" content="#02050b">
+
+  <title>Untuk Sayangku 🤍</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       AUDIO
+  ====================================================== -->
+
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="assets/lagu.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <!-- =====================================================
+       PIN SCREEN
+  ====================================================== -->
+
+  <section id="pinScreen" class="screen pin-screen">
+
+    <div class="pin-decoration">
+
+      <div class="tiny-butterfly butterfly-one">
+        <img src="assets/butterfly.png" alt="">
+      </div>
+
+      <div class="tiny-butterfly butterfly-two">
+        <img src="assets/butterfly.png" alt="">
+      </div>
+
+      <div class="pin-flower flower-one">✿</div>
+      <div class="pin-flower flower-two">❀</div>
+
+    </div>
+
+
+    <div class="pin-content">
+
+      <div class="lock-icon">
+        🔐
+      </div>
+
+      <h1>Untukmu</h1>
+
+      <p class="pin-subtitle">
+        Masukkan kunci kecil untuk membuka sesuatu.
+      </p>
+
+
+      <!-- PIN DISPLAY -->
+
+      <div id="pinDisplay" class="pin-display">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
+      <p id="pinError" class="pin-error"></p>
+
+
+      <!-- KEYPAD -->
+
+      <div class="keypad">
+
+        <button class="key" data-number="1" type="button">1</button>
+        <button class="key" data-number="2" type="button">2</button>
+        <button class="key" data-number="3" type="button">3</button>
+
+        <button class="key" data-number="4" type="button">4</button>
+        <button class="key" data-number="5" type="button">5</button>
+        <button class="key" data-number="6" type="button">6</button>
+
+        <button class="key" data-number="7" type="button">7</button>
+        <button class="key" data-number="8" type="button">8</button>
+        <button class="key" data-number="9" type="button">9</button>
+
+        <button
+          class="key key-special"
+          id="clearPin"
+          type="button"
+        >
+          C
+        </button>
+
+        <button class="key" data-number="0" type="button">
+          0
+        </button>
+
+        <button
+          class="key key-special"
+          id="deletePin"
+          type="button"
+        >
+          ←
+        </button>
+
+      </div>
+
+
+      <p class="pin-hint">
+
+        <img
+          src="assets/butterfly.png"
+          alt=""
+        >
+
+        ada sesuatu yang menunggumu
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       LOADING SCREEN
+  ====================================================== -->
+
+  <section
+    id="loadingScreen"
+    class="loading-overlay hidden"
+  >
+
+    <div
+      id="butterflyContainer"
+      class="butterfly-container"
+    ></div>
+
+
+    <div class="loading-center">
+
+      <div class="loading-icon">
+
+        <img
+          src="assets/butterfly.png"
+          alt=""
+        >
+
+      </div>
+
+      <h2>
+        Untuk Sayngku...
+      </h2>
+
+      <p>
+        Tunggu sebentar...
+      </p>
+
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       BOOK SCREEN
+  ====================================================== -->
+
+  <section
+    id="bookPage"
+    class="screen book-screen hidden"
+  >
+
+    <!-- BACKGROUND DECORATION -->
+
+    <div class="book-background-butterflies">
+
+      <div class="book-butterfly b1">
+        <img src="assets/butterfly.png" alt="">
+      </div>
+
+      <div class="book-butterfly b2">
+        <img src="assets/butterfly.png" alt="">
+      </div>
+
+      <div class="book-butterfly b3">
+        <img src="assets/butterfly.png" alt="">
+      </div>
+
+      <div class="book-butterfly b4">
+        <img src="assets/butterfly.png" alt="">
+      </div>
+
+    </div>
+
+
+    <!-- FLOWER DECORATION -->
+
+    <div class="flower-decoration flower-a">✿</div>
+    <div class="flower-decoration flower-b">❀</div>
+    <div class="flower-decoration flower-c">✾</div>
+    <div class="flower-decoration flower-d">✿</div>
+
+
+    <!-- BOOK -->
+
+    <div class="book-wrapper">
+
+      <div
+        id="book"
+        class="book"
+      >
+
+
+        <!-- =================================================
+             ISI SURAT
+        ================================================== -->
+
+        <div class="book-page">
+
+          <div class="page-flower page-flower-one">
+            ❀
+          </div>
+
+          <div class="page-flower page-flower-two">
+            ✿
+          </div>
+
+
+          <div class="letter-content">
+
+            <div class="letter-top">
+
+              <img
+                src="assets/butterfly.png"
+                alt=""
+              >
+
+            </div>
+
+
+            <p class="letter-label">
+              UNTUKMU
+            </p>
+
+
+            <h2>
+              Ada sesuatu
+              <br>
+              yang ingin kusampaikan...
+            </h2>
+
+
+            <div
+              class="encrypted-message"
+              id="encryptedMessage"
+            ></div>
+
+
+            <div class="decrypt-area">
+
+              <button
+                id="holdButton"
+                class="hold-button"
+                type="button"
+              >
+
+                <span class="hold-text">
+                  Tekan & tahan
+                </span>
+
+                <span class="hold-subtext">
+                  untuk membaca pesan
+                </span>
+
+                <div class="hold-progress"></div>
+
+              </button>
+
+            </div>
+
+
+            <div
+              id="realMessage"
+              class="real-message"
+            ></div>
+
+
+            <div
+              id="messageEnd"
+              class="message-end hidden"
+            >
+
+              <div class="end-butterfly">
+
+                <img
+                  src="assets/butterfly.png"
+                  alt=""
+                >
+
+              </div>
+
+              <p>
+                🤍
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             COVER
+        ================================================== -->
+
+        <div class="book-cover">
+
+          <div class="cover-flower cover-flower-one">
+            ✿
+          </div>
+
+          <div class="cover-flower cover-flower-two">
+            ❀
+          </div>
+
+
+          <div class="cover-butterfly">
+
+            <img
+              src="assets/butterfly.png"
+              alt=""
+            >
+
+          </div>
+
+
+          <div class="cover-content">
+
+            <p class="small-text">
+              sebuah surat kecil
+            </p>
+
+
+            <h1>
+
+              Untuk
+
+              <br>
+
+              <span id="personName">
+                Sayangku
+              </span>
+
+            </h1>
+
+
+            <div class="cover-line"></div>
+
+
+            <p class="cover-date">
+              dari seseorang yang ingin
+              menyampaikan sesuatu
+            </p>
+
+
+            <button
+              id="openBookButton"
+              class="open-button"
+              type="button"
+            >
+              Buka Surat
+            </button>
+
+          </div>
+
+
+          <div class="cover-bottom-butterfly">
+
+            <img
+              src="assets/butterfly.png"
+              alt=""
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- MUSIC -->
+
+    <button
+      id="musicButton"
+      class="music-button"
+      type="button"
+      aria-label="Kontrol musik"
+    >
+      ♪
+    </button>
+
+
+    <!-- RESTART -->
+
+    <button
+      id="restartButton"
+      class="restart-button"
+      type="button"
+      aria-label="Mulai ulang"
+    >
+      ↻
+    </button>
+
+  </section>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
